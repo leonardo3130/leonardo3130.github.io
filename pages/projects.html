@@ -11,7 +11,7 @@
   <!-- Navbar -->
   <nav class="fixed top-0 w-full bg-white shadow-md z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <a href="index.html" class="text-xl font-bold">My Portfolio</a>
+      <a href="index.html" class="text-xl font-bold">Leonardo Po</a>
       <ul class="flex space-x-6">
         <li><a href="../index.html" class="hover:text-blue-500 font-medium">CV</a></li>
         <li><a href="projects.html" class="hover:text-blue-500 font-medium">Projects</a></li>
@@ -20,44 +20,72 @@
     </div>
   </nav>
 
-  <main class="container mx-auto py-20 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold">1 vs All-phabet</h3>
-      <p class="text-gray-600">Short description of the project.</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold">AFLP - Connect X player</h3>
-      <p class="text-gray-600">Short description of the project.</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold">Selfie</h3>
-      <p class="text-gray-600">Short description of the project.</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold">PandOS</h3>
-      <p class="text-gray-600">Short description of the project.</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold">Overlapped CIFAR-10 images classification</h3>
-      <p class="text-gray-600">dfbghjsfdghgjfh</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
-      <img src="https://via.placeholder.com/400x200" class="rounded-xl mb-4" alt="Project">
-      <h3 class="text-xl font-semibold"> This Website </h3>
-      <p class="text-gray-600">I love recursion !!</p>
-      <!-- <a href="#" class="text-blue-500 hover:underline">View More →</a> -->
-    </div>
-    <!-- Repeat more cards -->
-  </main>
+  <main id="projects" class="container mx-auto py-20 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"></main>
+
+<script>
+  const maxIframeLevel = 2;
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentLevel = parseInt(urlParams.get("iframeLevel")) || 0;
+
+  const projects = [
+    { title: "1 vs All-phabet", description: "ASCII graphic game with infinite levels and maps.", img: "../assets/imgs/1vs.png" },
+    { title: "AFLP - Connect X player", description: "AI agent using minimax + heuristic based algorithm to play a generalized version of connect 4.",
+        img: "../assets/imgs/conn.png" },
+    { title: "Selfie",
+      description: `Full-Stack Personal Productivity Web App that helps you keep track of your daily activities using a calendar, integrated with
+        a Pomodoro timer and Markdown note editor. It includes timezones support and ics upload/download support.`,
+      img: "../assets/imgs/selfie.png"
+    },
+    {
+        title: "µPandOS",
+        description: "µPandOS is an educational microkernel operating system that used message-passing based synchronization.",
+        img: "../assets/imgs/os.png"
+    },
+    {
+        title: "Tradisk",
+        description: "Full-Stack Web App allowing EVE Online players to explore the financial markets of the game. Built with Agile practices.",
+        img: "../assets/imgs/tradisk.png"
+    },
+    {
+        title: "Overlapped CIFAR-10 images classification",
+        description: "Design and implementation of a CNN-based model to predict the labels of 2 overlapping CIFAR-10 images.",
+        img: "../assets/imgs/cifar.png"
+    },
+    {
+      title: "This Website",
+      description: "I love recursion !!",
+      url: currentLevel < maxIframeLevel
+           ? window.location.origin + window.location.pathname + `?iframeLevel=${currentLevel + 1}`
+           : null  // stop recursion after maxIframeLevel
+    }
+  ];
+
+  function renderProjects() {
+    const container = document.getElementById("projects");
+    container.innerHTML = projects.map(project => `
+      <div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition flex flex-col">
+        ${
+          project.url
+            ? `
+              <div class="relative w-full pt-[56.25%] mb-4 rounded-xl overflow-hidden border">
+                <iframe
+                  src="${project.url}"
+                  class="absolute top-0 left-0 w-full h-full"
+                  loading="lazy">
+                </iframe>
+              </div>
+            `
+            : project.title === "This Website"
+              ? `<p class="text-red-500 mb-4">Max recursion reached (${maxIframeLevel} iframes)</p>`
+              : `<img src="${project.img}" class="rounded-xl mb-4" alt="${project.title}">`
+        }
+        <h3 class="text-xl font-semibold">${project.title}</h3>
+        <p class="text-gray-600">${project.description}</p>
+      </div>
+    `).join("");
+  }
+
+  renderProjects();
+</script>
 </body>
 </html>
