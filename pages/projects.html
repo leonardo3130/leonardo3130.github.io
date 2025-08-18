@@ -55,7 +55,7 @@
       title: "This Website",
       description: "I love recursion !!",
       url: currentLevel < maxIframeLevel
-           ? window.location.origin + window.location.pathname + `?iframeLevel=${currentLevel + 1}`
+           ? window.location.href.split('?')[0] + `?iframeLevel=${currentLevel + 1}`
            : null  // stop recursion after maxIframeLevel
     }
   ];
