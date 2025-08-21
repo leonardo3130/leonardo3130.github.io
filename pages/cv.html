@@ -22,37 +22,45 @@
     </div>
   </nav>
 
-  <section class="bg-gray-200 min-h-screen flex items-center justify-center pt-20">
-    <ul class="">
-        <li class="">
-            <div class="">
-                <p class="">2027</p>
-                <p class="">Computer Science MSc, University of Bologna</p>
-            </div>
-        </li>
-        <li class="">
-            <div class="">
-                <p class="">2022-2025</p>
-                <p class="">Computer Science BSc, University of Bologna</p>
-            </div>
-        </li>
-        <li class="">
-            <div class="">
-                <p class="">2024-12 - 2025-02</p>
-                <p class="">Data analysis internship, University of Bologna</p>
-            </div>
-        </li>
-        <li class="">
-            <div class="">
-                <p class="">2017-2022</p>
-                <p class="">Scientific High Scool Graduation</p>
-            </div>
-        </li>
-    </ul>
-  </section>
-  <section>
+  <main id="cv" class="container mx-auto py-20 mt-16">
+      <section class="flex flex-col justify-start items-start min-h-screen w-full">
+          <h2 class="text-3xl font-bold mb-6">Education</h2>
+          <ul class="flex flex-col">
+            <li class="mb-3">
+                <div class="flex flex-row">
+                    <img class="h-[7.2em] w-[7.2em]" src="../assets/imgs/unibo_logo.svg" alt="unibo_logo">
+                    <div class="ms-4 flex flex-col">
+                        <p class="text-2xl font-semibold">Computer Science MSc</p>
+                        <p class="text-xl mt-1">University of Bologna</p>
+                        <p class"text-lg font-light mt-1">September 2025 - 2027 (expected)</p>
+                    </div>
+                </div>
+            </li>
+            <li class="mb-2">
+                <div class="flex flex-row">
+                    <img class="h-[7.2em] w-[7.2em]" src="../assets/imgs/unibo_logo.svg" alt="unibo_logo">
+                    <div class="ms-4 flex flex-col">
+                        <p class="text-2xl font-semibold">Computer Science BSc</p>
+                        <p class="text-xl mt-1">University of Bologna</p>
+                        <p class"text-lg font-light mt-1">September 2022 - July 2025</p>
+                        <p><b>Final Grade</b>: 110/110</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="flex flex-row">
+                    <img class="h-[7.2em] w-[7.2em] object-scale-down" src="../assets/imgs/galileo_logo.png" alt="galilei_logo">
+                    <div class="ms-4 flex flex-col">
+                        <p class="text-2xl font-semibold">High School of Science, Applied Sciences option</p>
+                        <p class="text-xl mt-1">Galileo Galilei Institute, Mirandola (MO)</p>
+                        <p class"text-lg font-light mt-1">09/2017 -  2022</p>
+                        <p><b>Final Grade</b>: 95/100</p>
+                    </div>
+            </li>
+          </ul>
 
-  </section>
+      </section>
+    </main>
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
