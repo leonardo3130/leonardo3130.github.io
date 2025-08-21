@@ -23,8 +23,12 @@
   </nav>
 
   <main id="cv" class="container mx-auto py-20 mt-16">
-      <section class="flex flex-col justify-start items-start min-h-screen w-full">
-          <h2 class="text-3xl font-bold mb-6">Education</h2>
+      <div class="fixed top-20 left-0 w-full bg-yellow-400 text-yellow-900 px-6 py-4 text-center font-bold shadow-md z-50">
+            🚧 This page is a Work In Progress! 🚧
+      </div>
+
+      <section class="flex flex-col justify-start items-start w-full">
+          <h2 class="text-4xl font-bold mb-6">Education</h2>
           <ul class="flex flex-col">
             <li class="mb-3">
                 <div class="flex flex-row">
@@ -60,21 +64,118 @@
           </ul>
 
       </section>
+      <section class="mt-4 flex flex-col justify-start items-start min-h-screen w-full">
+          <h2 class="text-4xl font-bold mb-6">Technical Skills</h2>
+          <ul>
+              <li id="pg" class="flex mb-2 text-xl font-bold">Programming Languages:</li>
+              <li id="fw" class="flex mb-2 text-xl font-bold">Frameworks:</li>
+              <li id="ml" class="flex mb-2 text-xl font-bold">AI/ML:</li>
+              <li id="db" class="flex mb-2 text-xl font-bold">Databases:</li>
+              <li id="tools" class="flex mb-2 text-xl font-bold">Tools:</li>
+      </section>
     </main>
-  <script>
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.utils.toArray(".reveal").forEach((el) => {
-      gsap.to(el, {
-        opacity: 1,
-        y: -20,
-        duration: 1,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 80%",
+    <script>
+          const iconsMap = {
+                "html": "../assets/icons/html.svg",
+                "css": "../assets/icons/css.svg",
+                "git": "../assets/icons/git.svg",
+                "js": "../assets/icons/javascript.svg",
+                "ts": "../assets/icons/typescript.svg",
+                "java": "../assets/icons/java.svg",
+                "c": "../assets/icons/c.svg",
+                "c++": "../assets/icons/c++.svg",
+                "python": "../assets/icons/python.svg",
+                "go": "../assets/icons/go.svg",
+                "rust": "../assets/icons/rust.svg",
+                "kotlin": "../assets/icons/kotlin.svg",
+                "mongodb": "../assets/icons/mongodb.svg",
+                "github": "../assets/icons/github.svg",
+                "postgresql": "../assets/icons/postgresql.svg",
+                "bootstrap": "../assets/icons/bootstrap.svg",
+                "docker": "../assets/icons/docker.svg",
+                "fastapi": "../assets/icons/FastAPI.svg",
+                "linux": "../assets/icons/Linux.svg",
+                "node": "../assets/icons/nodejs.svg",
+                "react": "../assets/icons/react.svg",
+                "numpy": "../assets/icons/NumPy.svg",
+                "pandas": "../assets/icons/Pandas.svg",
+                "pytorch": "../assets/icons/PyTorch.svg",
+                "tensorflow": "../assets/icons/TensorFlow.svg",
+                "rust": "../assets/icons/rust.svg",
+                "tailwind": "../assets/icons/tailwind.svg",
+                "keras": "../assets/icons/keras.svg",
         }
-      });
-    });
-  </script>
+
+        function createSkillsLists(){
+
+            const pg = document.getElementById("pg");
+            const fw = document.getElementById("fw");
+            const ml = document.getElementById("ml");
+            const db = document.getElementById("db");
+            const tools = document.getElementById("tools");
+
+            const pglist = [
+                "c",
+                "c++",
+                "java",
+                "python",
+                //"rust",
+                "js",
+                "ts",
+                "go",
+                //"kotlin",
+            ]
+
+            const fwlist = [
+                "react",
+                "node",
+                "tailwind",
+                "bootstrap",
+                "fastapi",
+            ]
+
+            const mllist = [
+                "numpy",
+                "pandas",
+                "pytorch",
+                "keras",
+            ]
+
+            const dblist = [
+                "mongodb",
+                "postgresql",
+            ]
+
+            const toolslist = [
+                "git",
+                "github",
+                "linux",
+                "docker",
+            ]
+
+            pg.innerHTML += "<ul class='ps-4 flex flex-row gap-2'>" + pglist.map(icon => `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`).join("") + "</ul>";
+            fw.innerHTML += "<ul class='ps-4 flex flex-row gap-2'>" + fwlist.map(icon => `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`).join("") + "</ul>";
+            ml.innerHTML += "<ul class='ps-4 flex flex-row gap-2'>" + mllist.map(icon => `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`).join("") + "</ul>";
+            db.innerHTML += "<ul class='ps-4 flex flex-row gap-2'>" + dblist.map(icon => `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`).join("") + "</ul>";
+            tools.innerHTML += "<ul class='ps-4 flex flex-row gap-2'>" + toolslist.map(icon => `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`).join("") + "</ul>";
+        }
+
+        createSkillsLists();
+
+
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray(".reveal").forEach((el) => {
+          gsap.to(el, {
+            opacity: 1,
+            y: -20,
+            duration: 1,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 80%",
+            }
+          });
+        });
+    </script>
 </body>
 </html>
