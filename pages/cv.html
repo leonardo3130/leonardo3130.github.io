@@ -44,7 +44,10 @@
         </ul>
       </div>
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div
+        id="mobileMenu"
+        class="max-h-0 overflow-hidden transition-all duration-1000 md:max-h-0 bg-white border-t"
+      >
         <ul class="flex flex-col p-4 space-y-3">
           <li>
             <a
@@ -73,7 +76,7 @@
 
     <main
       id="cv"
-      class="container mx-auto px-4 md:px-6 py-20 mt-20 md:mt-24 max-w-5xl"
+      class="container mx-auto px-4 md:px-6 py-5 mt-20 md:mt-24 max-w-5xl"
     >
       <!-- Education Section -->
       <section class="mb-12">
@@ -311,7 +314,8 @@
       const mobileMenu = document.getElementById("mobileMenu");
 
       mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("max-h-96");
         const icon = mobileMenuBtn.querySelector("i");
         icon.classList.toggle("fa-bars");
         icon.classList.toggle("fa-times");

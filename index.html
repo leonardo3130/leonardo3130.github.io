@@ -42,7 +42,10 @@
         </ul>
       </div>
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div
+        id="mobileMenu"
+        class="max-h-0 overflow-hidden md:transition-all duration-700 md:max-h-0 bg-white border-t"
+      >
         <ul class="flex flex-col p-4 space-y-3">
           <li>
             <a
@@ -106,7 +109,8 @@
       const mobileMenu = document.getElementById("mobileMenu");
 
       mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("max-h-96");
         const icon = mobileMenuBtn.querySelector("i");
         icon.classList.toggle("fa-bars");
         icon.classList.toggle("fa-times");

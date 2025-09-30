@@ -42,7 +42,10 @@
         </ul>
       </div>
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div
+        id="mobileMenu"
+        class="max-h-0 overflow-hidden transition-all duration-1000 md:max-h-0 bg-white border-t"
+      >
         <ul class="flex flex-col p-4 space-y-3">
           <li>
             <a
@@ -71,7 +74,7 @@
 
     <main
       id="projects"
-      class="container mx-auto py-20 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
+      class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"
     ></main>
 
     <script>
@@ -80,7 +83,8 @@
       const mobileMenu = document.getElementById("mobileMenu");
 
       mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("max-h-0");
+        mobileMenu.classList.toggle("max-h-96");
         const icon = mobileMenuBtn.querySelector("i");
         icon.classList.toggle("fa-bars");
         icon.classList.toggle("fa-times");
