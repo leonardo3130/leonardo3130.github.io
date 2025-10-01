@@ -98,7 +98,16 @@
       });
       const maxIframeLevel = 2;
       const urlParams = new URLSearchParams(window.location.search);
-      const currentLevel = parseInt(urlParams.get("iframeLevel")) || 0;
+      const currentLevel = Math.abs(
+        parseInt(urlParams.get("iframeLevel")) || 0,
+      );
+      const links = document.body.getElementsByTagName("a");
+      for (link of links) {
+        console.log(link.href);
+        link.href = link.href.split("?")[0];
+        link.href = link.href + `?iframeLevel=${currentLevel}`;
+      }
+
       const iconsMap = {
         html: "../assets/icons/html.svg",
         css: "../assets/icons/css.svg",
@@ -222,7 +231,7 @@
               </div>
             `
             : project.title === "This Website"
-              ? `<p class="text-red-500 mb-4">Max recursion reached (${maxIframeLevel} iframes)</p>`
+              ? `<p class="text-red-500 mb-4">Max recursion reached</p>`
               : `<img src="${project.img}" class="rounded-xl mb-4" alt="${project.title}">`
         }
         <h3 class="text-xl font-semibold">${project.title}</h3>

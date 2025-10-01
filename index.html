@@ -112,6 +112,17 @@
       </div>
     </main>
     <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const currentLevel = Math.abs(
+        parseInt(urlParams.get("iframeLevel")) || 0,
+      );
+      const links = document.body.getElementsByTagName("a");
+      for (link of links) {
+        console.log(link.href);
+        link.href = link.href.split("?")[0];
+        link.href = link.href + `?iframeLevel=${currentLevel}`;
+      }
+
       // Mobile menu toggle
       const mobileMenuBtn = document.getElementById("mobileMenuBtn");
       const mobileMenu = document.getElementById("mobileMenu");
