@@ -1,412 +1,346 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio - CV</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
 
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-white shadow-md z-50">
-      <div class="container mx-auto flex justify-between items-center p-4 px-6">
-        <a href="../index.html" class="text-xl font-bold">Leonardo Po</a>
-        <!-- Mobile Menu Button -->
-        <button id="mobileMenuBtn" class="md:hidden text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-        <!-- Desktop Menu -->
-        <ul class="hidden md:flex space-x-6">
-          <li>
-            <a href="../pages/cv.html" class="group font-medium"
-              >CV
-              <div
-                class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"
-              ></div>
-            </a>
-          </li>
-          <li>
-            <a href="../pages/projects.html" class="group font-medium"
-              >Projects
-              <div
-                class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"
-              ></div>
-            </a>
-          </li>
-          <li>
-            <a href="../index.html" class="group font-medium"
-              >About
-              <div
-                class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"
-              ></div>
-            </a>
-          </li>
-        </ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio - CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
+    <div class="container mx-auto flex justify-between items-center p-4 px-6">
+      <a href="../index.html" class="text-xl font-bold">Leonardo Po</a>
+      <!-- Mobile Menu Button -->
+      <button id="mobileMenuBtn" class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex space-x-6">
+        <li>
+          <a href="../pages/cv.html" class="group font-medium">CV
+            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
+          </a>
+        </li>
+        <li>
+          <a href="../pages/projects.html" class="group font-medium">Projects
+            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
+          </a>
+        </li>
+        <li>
+          <a href="../index.html" class="group font-medium">About
+            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="max-h-0 overflow-hidden transition-all duration-1000 md:max-h-0 bg-white border-t">
+      <ul class="flex flex-col p-4 space-y-3">
+        <li>
+          <a href="../pages/cv.html" class="block hover:text-blue-500 font-medium">CV</a>
+        </li>
+        <li>
+          <a href="../pages/projects.html" class="block hover:text-blue-500 font-medium">Projects</a>
+        </li>
+        <li>
+          <a href="../index.html" class="block hover:text-blue-500 font-medium">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="cv" class="container mx-auto px-4 md:px-6 py-5 mt-20 md:mt-24 max-w-5xl">
+    <!-- Education Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2">
+        Education
+      </h2>
+      <div class="space-y-6">
+        <!-- Education Item 1 -->
+        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <img class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start" src="../assets/imgs/unibo_logo.svg"
+              alt="unibo_logo" />
+            <div class="flex flex-col flex-grow">
+              <p class="text-xl md:text-2xl font-semibold text-gray-900">
+                Computer Science MSc
+              </p>
+              <p class="text-lg md:text-xl text-gray-700 mt-1">
+                University of Bologna
+              </p>
+              <p class="text-base md:text-lg text-gray-600 mt-1">
+                September 2025 - 2027 (expected)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Item 2 -->
+        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <img class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start" src="../assets/imgs/unibo_logo.svg"
+              alt="unibo_logo" />
+            <div class="flex flex-col flex-grow">
+              <p class="text-xl md:text-2xl font-semibold text-gray-900">
+                Computer Science BSc
+              </p>
+              <p class="text-lg md:text-xl text-gray-700 mt-1">
+                University of Bologna
+              </p>
+              <p class="text-base md:text-lg text-gray-600 mt-1">
+                September 2022 - July 2025
+              </p>
+              <p class="text-base text-gray-700 mt-2">
+                <span class="font-semibold">Final Grade:</span> 110/110
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Item 3 -->
+        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <img class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start object-contain"
+              src="../assets/imgs/galileo_logo.png" alt="galilei_logo" />
+            <div class="flex flex-col flex-grow">
+              <p class="text-xl md:text-2xl font-semibold text-gray-900">
+                High School of Science, Applied Sciences option
+              </p>
+              <p class="text-lg md:text-xl text-gray-700 mt-1">
+                Galileo Galilei Institute, Mirandola (MO)
+              </p>
+              <p class="text-base md:text-lg text-gray-600 mt-1">
+                September 2017 - 2022
+              </p>
+              <p class="text-base text-gray-700 mt-2">
+                <span class="font-semibold">Final Grade:</span> 95/100
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <!-- Mobile Menu -->
-      <div
-        id="mobileMenu"
-        class="max-h-0 overflow-hidden transition-all duration-1000 md:max-h-0 bg-white border-t"
-      >
-        <ul class="flex flex-col p-4 space-y-3">
-          <li>
-            <a
-              href="../pages/cv.html"
-              class="block hover:text-blue-500 font-medium"
-              >CV</a
-            >
-          </li>
-          <li>
-            <a
-              href="../pages/projects.html"
-              class="block hover:text-blue-500 font-medium"
-              >Projects</a
-            >
-          </li>
-          <li>
-            <a
-              href="../index.html"
-              class="block hover:text-blue-500 font-medium"
-              >About</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <main
-      id="cv"
-      class="container mx-auto px-4 md:px-6 py-5 mt-20 md:mt-24 max-w-5xl"
-    >
-      <!-- Education Section -->
-      <section class="mb-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2"
-        >
-          Education
-        </h2>
-        <div class="space-y-6">
-          <!-- Education Item 1 -->
-          <div
-            class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow"
-          >
-            <div class="flex flex-col sm:flex-row gap-4">
-              <img
-                class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start"
-                src="../assets/imgs/unibo_logo.svg"
-                alt="unibo_logo"
-              />
-              <div class="flex flex-col flex-grow">
-                <p class="text-xl md:text-2xl font-semibold text-gray-900">
-                  Computer Science MSc
-                </p>
-                <p class="text-lg md:text-xl text-gray-700 mt-1">
-                  University of Bologna
-                </p>
-                <p class="text-base md:text-lg text-gray-600 mt-1">
-                  September 2025 - 2027 (expected)
-                </p>
-              </div>
+    </section>
+    <!-- Experience Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2">
+        Experience
+      </h2>
+      <div class="space-y-6">
+        <!-- Experience Item -->
+        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3">
+            <div>
+              <h3 class="text-xl md:text-2xl font-semibold text-gray-900">
+                Data Analyst Intern
+              </h3>
+              <p class="text-lg md:text-xl text-gray-700 mt-1">
+                University of Bologna
+              </p>
+            </div>
+            <div class="text-base md:text-lg text-gray-600 mt-2 sm:mt-0 sm:text-right">
+              <p class="font-medium">Dec. 2024 - Feb. 2025</p>
+              <p>Bologna, Italy</p>
             </div>
           </div>
-
-          <!-- Education Item 2 -->
-          <div
-            class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow"
-          >
-            <div class="flex flex-col sm:flex-row gap-4">
-              <img
-                class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start"
-                src="../assets/imgs/unibo_logo.svg"
-                alt="unibo_logo"
-              />
-              <div class="flex flex-col flex-grow">
-                <p class="text-xl md:text-2xl font-semibold text-gray-900">
-                  Computer Science BSc
-                </p>
-                <p class="text-lg md:text-xl text-gray-700 mt-1">
-                  University of Bologna
-                </p>
-                <p class="text-base md:text-lg text-gray-600 mt-1">
-                  September 2022 - July 2025
-                </p>
-                <p class="text-base text-gray-700 mt-2">
-                  <span class="font-semibold">Final Grade:</span> 110/110
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Education Item 3 -->
-          <div
-            class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow"
-          >
-            <div class="flex flex-col sm:flex-row gap-4">
-              <img
-                class="h-20 w-20 md:h-28 md:w-28 flex-shrink-0 self-start object-contain"
-                src="../assets/imgs/galileo_logo.png"
-                alt="galilei_logo"
-              />
-              <div class="flex flex-col flex-grow">
-                <p class="text-xl md:text-2xl font-semibold text-gray-900">
-                  High School of Science, Applied Sciences option
-                </p>
-                <p class="text-lg md:text-xl text-gray-700 mt-1">
-                  Galileo Galilei Institute, Mirandola (MO)
-                </p>
-                <p class="text-base md:text-lg text-gray-600 mt-1">
-                  September 2017 - 2022
-                </p>
-                <p class="text-base text-gray-700 mt-2">
-                  <span class="font-semibold">Final Grade:</span> 95/100
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Experience Section -->
-      <section class="mb-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2"
-        >
-          Experience
-        </h2>
-        <div class="space-y-6">
-          <!-- Experience Item -->
-          <div
-            class="bg-white rounded-lg shadow-sm p-4 md:p-6 hover:shadow-md transition-shadow"
-          >
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-3"
-            >
-              <div>
-                <h3 class="text-xl md:text-2xl font-semibold text-gray-900">
-                  Data Analyst Intern
-                </h3>
-                <p class="text-lg md:text-xl text-gray-700 mt-1">
-                  University of Bologna
-                </p>
-              </div>
-              <div
-                class="text-base md:text-lg text-gray-600 mt-2 sm:mt-0 sm:text-right"
-              >
-                <p class="font-medium">Dec. 2024 - Feb. 2025</p>
-                <p>Bologna, Italy</p>
-              </div>
-            </div>
-            <ul class="space-y-2 ml-4">
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
-                <span class="text-base md:text-lg text-gray-700"
-                  >Developed and implemented a pipeline leveraging Large
-                  Language Models (LLMs) for the analysis of textual medical
-                  data</span
-                >
-              </li>
-              <li class="flex items-start">
-                <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
-                <span class="text-base md:text-lg text-gray-700"
-                  >Performed data cleaning, standardization, and exploratory
-                  analysis on medical datasets; experimented with applying LLMs
-                  to enhance insights in the medical domain</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Technical Skills Section -->
-      <section class="mb-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2"
-        >
-          Technical Skills
-        </h2>
-        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 space-y-4">
-          <div class="skill-category">
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              Programming Languages
-            </h3>
-            <div id="pg" class="flex flex-wrap gap-3"></div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              Frameworks
-            </h3>
-            <div id="fw" class="flex flex-wrap gap-3"></div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              AI/ML
-            </h3>
-            <div id="ml" class="flex flex-wrap gap-3"></div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              Databases
-            </h3>
-            <div id="db" class="flex flex-wrap gap-3"></div>
-          </div>
-
-          <div class="skill-category">
-            <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
-              Tools
-            </h3>
-            <div id="tools" class="flex flex-wrap gap-3"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Communities Section -->
-      <section class="mb-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2"
-        >
-          Communities
-        </h2>
-        <div class="bg-white rounded-lg shadow-sm p-4 md:p-6">
-          <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            CartaBinaria
-          </h3>
-          <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
-            CartaBinaria is a community of students of the Department of
-            Computer Science and Engineering of the University of Bologna, that
-            develops and maintains applications and tools meant to help hundreds
-            of Computer Science and Computer Engineering students pursuing their
-            studies.
-          </p>
-          <ul class="space-y-3 ml-4">
+          <ul class="space-y-2 ml-4">
             <li class="flex items-start">
               <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
-              <span class="text-base md:text-lg text-gray-700"
-                >Contributed to the development of a Telegram Bot, used by
-                hundreds of students</span
-              >
+              <span class="text-base md:text-lg text-gray-700">Developed and implemented a pipeline leveraging Large
+                Language Models (LLMs) for the analysis of textual medical
+                data</span>
             </li>
             <li class="flex items-start">
               <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
-              <span class="text-base md:text-lg text-gray-700"
-                >Contributed to the development of a WebDAV server to make
-                CartaBinaria's resources available via remote filesystem</span
-              >
-            </li>
-            <li class="flex items-start">
-              <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
-              <span class="text-base md:text-lg text-gray-700"
-                >Contributed to the development of Polleg, a tool that allows
-                students to upload, discuss and comment exams and notes,
-                directly from CartaBinaria's website.</span
-              >
+              <span class="text-base md:text-lg text-gray-700">Performed data cleaning, standardization, and exploratory
+                analysis on medical datasets; experimented with applying LLMs
+                to enhance insights in the medical domain</span>
             </li>
           </ul>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
-    <script>
-      const urlParams = new URLSearchParams(window.location.search);
-      const currentLevel = Math.abs(
-        parseInt(urlParams.get("iframeLevel")) || 0,
-      );
-      const links = document.body.getElementsByTagName("a");
-      for (link of links) {
-        console.log(link.href);
-        link.href = link.href.split("?")[0];
-        link.href = link.href + `?iframeLevel=${currentLevel}`;
-      }
+    <!-- Technical Skills Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2">
+        Technical Skills
+      </h2>
+      <div class="bg-white rounded-lg shadow-sm p-4 md:p-6 space-y-4">
+        <div class="skill-category">
+          <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+            Programming Languages
+          </h3>
+          <div id="pg" class="flex flex-wrap gap-3"></div>
+        </div>
 
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
+        <div class="skill-category">
+          <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+            Frameworks
+          </h3>
+          <div id="fw" class="flex flex-wrap gap-3"></div>
+        </div>
 
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("max-h-0");
-        mobileMenu.classList.toggle("max-h-96");
-        const icon = mobileMenuBtn.querySelector("i");
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-times");
+        <div class="skill-category">
+          <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+            AI/ML
+          </h3>
+          <div id="ml" class="flex flex-wrap gap-3"></div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+            Databases
+          </h3>
+          <div id="db" class="flex flex-wrap gap-3"></div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="text-lg md:text-xl font-semibold text-gray-900 mb-3">
+            Tools
+          </h3>
+          <div id="tools" class="flex flex-wrap gap-3"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communities Section -->
+    <section class="mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 border-b-2 border-gray-300 pb-2">
+        Communities
+      </h2>
+      <div class="bg-white rounded-lg shadow-sm p-4 md:p-6">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          CartaBinaria
+        </h3>
+        <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
+          CartaBinaria is a community of students of the Department of
+          Computer Science and Engineering of the University of Bologna, that
+          develops and maintains applications and tools meant to help hundreds
+          of Computer Science and Computer Engineering students pursuing their
+          studies.
+        </p>
+        <ul class="space-y-3 ml-4">
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
+            <span class="text-base md:text-lg text-gray-700">Contributed to the development of a Telegram Bot, used by
+              hundreds of students</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
+            <span class="text-base md:text-lg text-gray-700">Contributed to the development of a WebDAV server to make
+              CartaBinaria's resources available via remote filesystem</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-blue-500 mr-2 mt-1 flex-shrink-0">•</span>
+            <span class="text-base md:text-lg text-gray-700">Contributed to the development of Polleg, a tool that
+              allows
+              students to upload, discuss and comment exams and notes,
+              directly from CartaBinaria's website.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentLevel = Math.abs(
+      parseInt(urlParams.get("iframeLevel")) || 0,
+    );
+    const links = document.body.getElementsByTagName("a");
+    for (link of links) {
+      console.log(link.href);
+      link.href = link.href.split("?")[0];
+      link.href = link.href + `?iframeLevel=${currentLevel}`;
+    }
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    mobileMenuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("max-h-0");
+      mobileMenu.classList.toggle("max-h-96");
+      const icon = mobileMenuBtn.querySelector("i");
+      icon.classList.toggle("fa-bars");
+      icon.classList.toggle("fa-times");
+    });
+
+    const iconsMap = {
+      html: "../assets/icons/html.svg",
+      css: "../assets/icons/css.svg",
+      git: "../assets/icons/git.svg",
+      js: "../assets/icons/javascript.svg",
+      ts: "../assets/icons/typescript.svg",
+      java: "../assets/icons/java.svg",
+      c: "../assets/icons/c.svg",
+      "c++": "../assets/icons/c++.svg",
+      python: "../assets/icons/python.svg",
+      go: "../assets/icons/go.svg",
+      rust: "../assets/icons/rust.svg",
+      kotlin: "../assets/icons/kotlin.svg",
+      mongodb: "../assets/icons/mongodb.svg",
+      github: "../assets/icons/github.svg",
+      postgresql: "../assets/icons/postgresql.svg",
+      bootstrap: "../assets/icons/bootstrap.svg",
+      docker: "../assets/icons/docker.svg",
+      fastapi: "../assets/icons/FastAPI.svg",
+      linux: "../assets/icons/Linux.svg",
+      node: "../assets/icons/nodejs.svg",
+      react: "../assets/icons/react.svg",
+      numpy: "../assets/icons/NumPy.svg",
+      pandas: "../assets/icons/Pandas.svg",
+      pytorch: "../assets/icons/PyTorch.svg",
+      tensorflow: "../assets/icons/TensorFlow.svg",
+      tailwind: "../assets/icons/tailwind.svg",
+      keras: "../assets/icons/keras.svg",
+    };
+
+    function createSkillsLists() {
+      const pg = document.getElementById("pg");
+      const fw = document.getElementById("fw");
+      const ml = document.getElementById("ml");
+      const db = document.getElementById("db");
+      const tools = document.getElementById("tools");
+
+      const pglist = ["c", "c++", "java", "python", "js", "ts", "go"];
+      const fwlist = ["react", "node", "tailwind", "bootstrap", "fastapi"];
+      const mllist = ["numpy", "pandas", "pytorch", "keras"];
+      const dblist = ["mongodb", "postgresql"];
+      const toolslist = ["git", "github", "linux", "docker"];
+
+      const createIconHTML = (icon) =>
+        `<img class="h-10 w-10 md:h-12 md:w-12 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" src="${iconsMap[icon]}" alt="${icon}" title="${icon}">`;
+
+      pg.innerHTML = pglist.map(createIconHTML).join("");
+      fw.innerHTML = fwlist.map(createIconHTML).join("");
+      ml.innerHTML = mllist.map(createIconHTML).join("");
+      db.innerHTML = dblist.map(createIconHTML).join("");
+      tools.innerHTML = toolslist.map(createIconHTML).join("");
+    }
+
+    createSkillsLists();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.utils.toArray(".reveal").forEach((el) => {
+      gsap.to(el, {
+        opacity: 1,
+        y: -20,
+        duration: 1,
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+        },
       });
+    });
+  </script>
+</body>
 
-      const iconsMap = {
-        html: "../assets/icons/html.svg",
-        css: "../assets/icons/css.svg",
-        git: "../assets/icons/git.svg",
-        js: "../assets/icons/javascript.svg",
-        ts: "../assets/icons/typescript.svg",
-        java: "../assets/icons/java.svg",
-        c: "../assets/icons/c.svg",
-        "c++": "../assets/icons/c++.svg",
-        python: "../assets/icons/python.svg",
-        go: "../assets/icons/go.svg",
-        rust: "../assets/icons/rust.svg",
-        kotlin: "../assets/icons/kotlin.svg",
-        mongodb: "../assets/icons/mongodb.svg",
-        github: "../assets/icons/github.svg",
-        postgresql: "../assets/icons/postgresql.svg",
-        bootstrap: "../assets/icons/bootstrap.svg",
-        docker: "../assets/icons/docker.svg",
-        fastapi: "../assets/icons/FastAPI.svg",
-        linux: "../assets/icons/Linux.svg",
-        node: "../assets/icons/nodejs.svg",
-        react: "../assets/icons/react.svg",
-        numpy: "../assets/icons/NumPy.svg",
-        pandas: "../assets/icons/Pandas.svg",
-        pytorch: "../assets/icons/PyTorch.svg",
-        tensorflow: "../assets/icons/TensorFlow.svg",
-        tailwind: "../assets/icons/tailwind.svg",
-        keras: "../assets/icons/keras.svg",
-      };
-
-      function createSkillsLists() {
-        const pg = document.getElementById("pg");
-        const fw = document.getElementById("fw");
-        const ml = document.getElementById("ml");
-        const db = document.getElementById("db");
-        const tools = document.getElementById("tools");
-
-        const pglist = ["c", "c++", "java", "python", "js", "ts", "go"];
-        const fwlist = ["react", "node", "tailwind", "bootstrap", "fastapi"];
-        const mllist = ["numpy", "pandas", "pytorch", "keras"];
-        const dblist = ["mongodb", "postgresql"];
-        const toolslist = ["git", "github", "linux", "docker"];
-
-        const createIconHTML = (icon) =>
-          `<img class="h-10 w-10 md:h-12 md:w-12 p-2 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors" src="${iconsMap[icon]}" alt="${icon}" title="${icon}">`;
-
-        pg.innerHTML = pglist.map(createIconHTML).join("");
-        fw.innerHTML = fwlist.map(createIconHTML).join("");
-        ml.innerHTML = mllist.map(createIconHTML).join("");
-        db.innerHTML = dblist.map(createIconHTML).join("");
-        tools.innerHTML = toolslist.map(createIconHTML).join("");
-      }
-
-      createSkillsLists();
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.utils.toArray(".reveal").forEach((el) => {
-        gsap.to(el, {
-          opacity: 1,
-          y: -20,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%",
-          },
-        });
-      });
-    </script>
-  </body>
 </html>
