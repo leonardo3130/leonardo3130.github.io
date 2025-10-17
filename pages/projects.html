@@ -53,7 +53,8 @@
     </div>
   </nav>
 
-  <main id="projects" class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16"></main>
+  <main id="projects" class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 justify-items-center">
+  </main>
 
   <script>
     // Mobile menu toggle
@@ -189,7 +190,7 @@
       container.innerHTML = projects
         .map(
           (project) => `
-        <div class="bg-white rounded-2xl ${project.url ? "md:col-span-2" : ""} shadow-md p-6 hover:shadow-xl transition flex flex-col">
+        <div class="bg-white max-w-[90%] md:max-w-none rounded-2xl ${project.url ? "md:col-span-2 w-full" : ""} shadow-md p-6 hover:shadow-xl transition flex flex-col">
         ${project.url
               ? `
               <div class="relative w-full pt-[56.25%] mb-4 rounded-xl overflow-hidden border">
