@@ -4,224 +4,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Projects</title>
+  <title>Projects — Leonardo Po</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-900 antialiased">
   <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white shadow-md z-50">
-    <div class="container mx-auto flex justify-between items-center p-4 px-6">
-      <a href="../index.html" class="text-xl font-bold">Leonardo Po</a>
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="md:hidden text-2xl">
-        <i class="fas fa-bars"></i>
+  <nav class="fixed top-0 w-full bg-white border-b border-slate-200 z-50">
+    <div class="max-w-4xl mx-auto flex justify-between items-center h-14 px-4 md:px-6">
+      <a href="../index.html" class="text-base font-semibold tracking-tight text-slate-900">Leonardo Po</a>
+      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900">
+        <i class="fas fa-bars text-lg"></i>
       </button>
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex space-x-6">
+      <ul class="hidden md:flex items-center space-x-1">
         <li>
-          <a href="../pages/cv.html" class="group font-medium">CV
-            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
-          </a>
+          <a href="../index.html" class="px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">About</a>
         </li>
         <li>
-          <a href="../pages/projects.html" class="group font-medium">Projects
-            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
-          </a>
+          <a href="projects.html" class="px-3 py-2 text-base font-medium text-slate-900 bg-slate-100 rounded">Projects</a>
         </li>
         <li>
-          <a href="../index.html" class="group font-medium">About
-            <div class="bg-gray-800 h-[2px] w-0 group-hover:w-full transition-all duration-500"></div>
-          </a>
+          <a href="cv.html" class="px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">CV</a>
         </li>
       </ul>
     </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="max-h-0 overflow-hidden transition-all duration-1000 md:max-h-0 bg-white border-t">
-      <ul class="flex flex-col p-4 space-y-3">
-        <li>
-          <a href="../pages/cv.html" class="block hover:text-blue-500 font-medium">CV</a>
-        </li>
-        <li>
-          <a href="../pages/projects.html" class="block hover:text-blue-500 font-medium">Projects</a>
-        </li>
-        <li>
-          <a href="../index.html" class="block hover:text-blue-500 font-medium">About</a>
-        </li>
+    <div id="mobileMenu" class="max-h-0 overflow-hidden transition-all duration-200 md:hidden bg-white border-t border-slate-200">
+      <ul class="flex flex-col py-2 px-4">
+        <li><a href="../index.html" class="block py-2 text-base font-medium text-slate-600 hover:text-slate-900">About</a></li>
+        <li><a href="projects.html" class="block py-2 text-base font-medium text-slate-900">Projects</a></li>
+        <li><a href="cv.html" class="block py-2 text-base font-medium text-slate-600 hover:text-slate-900">CV</a></li>
       </ul>
     </div>
   </nav>
 
-  <main id="projects" class="container mx-auto py-10 grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 justify-items-center">
+  <main class="max-w-4xl mx-auto px-4 md:px-6 pt-20 pb-16">
+    <div id="projects" class="space-y-6"></div>
   </main>
 
   <script>
-    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById("mobileMenuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
-
     mobileMenuBtn.addEventListener("click", () => {
       mobileMenu.classList.toggle("max-h-0");
-      mobileMenu.classList.toggle("max-h-96");
+      mobileMenu.classList.toggle("max-h-48");
       const icon = mobileMenuBtn.querySelector("i");
       icon.classList.toggle("fa-bars");
       icon.classList.toggle("fa-times");
     });
+
     const maxIframeLevel = 2;
     const urlParams = new URLSearchParams(window.location.search);
-    const currentLevel = Math.abs(
-      parseInt(urlParams.get("iframeLevel")) || 0,
-    );
-    const links = document.body.getElementsByTagName("a");
-    for (link of links) {
-      console.log(link.href);
-      link.href = link.href.split("?")[0];
-      link.href = link.href + `?iframeLevel=${currentLevel}`;
-    }
+    const currentLevel = Math.abs(parseInt(urlParams.get("iframeLevel")) || 0);
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.href = link.href.split("?")[0] + `?iframeLevel=${currentLevel}`;
+    });
 
     const iconsMap = {
       html: "../assets/icons/html.svg",
       css: "../assets/icons/css.svg",
-      git: "../assets/icons/git.svg",
       js: "../assets/icons/javascript.svg",
       ts: "../assets/icons/typescript.svg",
       java: "../assets/icons/java.svg",
       c: "../assets/icons/c.svg",
       "c++": "../assets/icons/c++.svg",
+      "csharp": "../assets/icons/csharp.svg",
       python: "../assets/icons/python.svg",
-      go: "../assets/icons/go.svg",
-      rust: "../assets/icons/rust.svg",
-      kotlin: "../assets/icons/kotlin.svg",
       mongodb: "../assets/icons/mongodb.svg",
-      github: "../assets/icons/github.svg",
-      postgresql: "../assets/icons/postgresql.svg",
-      bootstrap: "../assets/icons/bootstrap.svg",
-      docker: "../assets/icons/docker.svg",
+      mssql: "../assets/icons/mssql.svg",
       fastapi: "../assets/icons/FastAPI.svg",
-      linux: "../assets/icons/Linux.svg",
+      aspnet: "../assets/icons/aspnet.svg",
+      angular: "../assets/icons/angular.svg",
       node: "../assets/icons/nodejs.svg",
       react: "../assets/icons/react.svg",
       numpy: "../assets/icons/NumPy.svg",
       pandas: "../assets/icons/Pandas.svg",
-      pytorch: "../assets/icons/PyTorch.svg",
-      tensorflow: "../assets/icons/TensorFlow.svg",
-      rust: "../assets/icons/rust.svg",
       tailwind: "../assets/icons/tailwind.svg",
       keras: "../assets/icons/keras.svg",
+      bootstrap: "../assets/icons/bootstrap.svg",
     };
 
     const projects = [
       {
-        title: "1 vs All-phabet",
-        description: "ASCII graphic game with infinite levels and maps.",
-        img: "../assets/imgs/1vs.png",
-        tech: ["c++"],
-        github: "https://github.com/leonardo3130/1-VS-All-phabet",
-      },
-      {
-        title: "AFLP - Connect X player",
-        description:
-          "AI agent using minimax + heuristic based algorithm to play a generalized version of connect 4.",
-        img: "../assets/imgs/conn.png",
-        tech: ["java"],
-        github: "https://github.com/leonardo3130/connectx",
-      },
-      {
         title: "Selfie",
-        description: `Full-Stack Personal Productivity Web App that helps you keep track of your daily activities using a calendar, integrated with
-        a Pomodoro timer and Markdown note editor.`,
-        img: "../assets/imgs/selfie.png",
-        tech: ["react", "mongodb", "node", "ts", "css", "bootstrap"],
+        description: "Full-stack productivity app with calendar, Pomodoro timer, and Markdown notes.",
+        context: "MERN stack project",
+        tech: ["react", "ts", "node", "mongodb"],
         github: "https://github.com/leonardo3130/Selfie",
       },
       {
+        title: "Tradisk",
+        description: "Web app for EVE Online players to explore in-game financial markets.",
+        context: "Built with Agile practices",
+        tech: ["react", "ts", "python", "fastapi"],
+      },
+      {
         title: "µPandOS",
-        description:
-          "µPandOS is an educational microkernel operating system that used message-passing based synchronization.",
-        img: "../assets/imgs/os.png",
+        description: "Educational microkernel OS with message-passing synchronization.",
+        context: "Operating Systems",
         tech: ["c"],
         github: "https://github.com/leonardo3130/MicroPandOS",
       },
       {
-        title: "Tradisk",
-        description:
-          "Full-Stack Web App allowing EVE Online players to explore the financial markets of the game. Built with Agile practices.",
-        img: "../assets/imgs/tradisk.png",
-        tech: ["react", "ts", "bootstrap", "python", "fastapi"],
-        //github: "https://github.com/leonardo3130/Tradisk"
-      },
-      {
-        title: "Overlapped CIFAR-10 images classification",
-        description:
-          "Design and implementation of a CNN-based model to predict the labels of 2 overlapping CIFAR-10 images.",
-        img: "../assets/imgs/cifar.png",
+        title: "CIFAR-10 Overlap Classification",
+        description: "CNN model to predict labels of 2 overlapping CIFAR-10 images.",
+        context: "Deep Learning project",
         tech: ["python", "keras", "pandas", "numpy"],
         github: "https://github.com/leonardo3130/project_AA",
       },
       {
+        title: "Connect X AI",
+        description: "AI agent using minimax with heuristics for generalized Connect 4.",
+        context: "Algorithms course",
+        tech: ["java"],
+        github: "https://github.com/leonardo3130/connectx",
+      },
+      {
+        title: "1 vs All-phabet",
+        description: "ASCII graphics game with procedural level generation.",
+        context: "Game development project",
+        tech: ["c++"],
+        github: "https://github.com/leonardo3130/1-VS-All-phabet",
+      },
+      {
         title: "This Website",
         description: "I love recursion !!",
-        url:
-          currentLevel < maxIframeLevel
-            ? window.location.href.split("?")[0] +
-            `?iframeLevel=${currentLevel + 1}`
-            : null, // stop recursion after maxIframeLevel
+        url: currentLevel < maxIframeLevel
+          ? window.location.href.split("?")[0] + `?iframeLevel=${currentLevel + 1}`
+          : null,
         tech: ["html", "css", "js", "tailwind"],
         github: "https://github.com/leonardo3130/leonardo3130.github.io",
       },
     ];
 
     function buildTechList(tech) {
-      return tech
-        .map(
-          (icon) =>
-            `<img class="h-[2.2em] w-[2.2em]" src="${iconsMap[icon]}" alt="${icon}">`,
-        )
-        .join("");
-    }
-
-    function onClickProject(project) {
-      if (project.github) window.location.href = project.github;
+      return tech.map(t => `<img class="h-6 w-6" src="${iconsMap[t]}" alt="${t}" title="${t}">`).join("");
     }
 
     function renderProjects() {
       const container = document.getElementById("projects");
-      container.innerHTML = projects
-        .map(
-          (project) => `
-        <div class="bg-white max-w-[90%] md:max-w-none rounded-2xl ${project.url ? "md:col-span-2 w-full" : ""} shadow-md p-6 hover:shadow-xl transition flex flex-col">
-        ${project.url
-              ? `
-              <div class="relative w-full pt-[56.25%] mb-4 rounded-xl overflow-hidden border">
-                <iframe
-                  src="${project.url}"
-                  class="absolute top-0 left-0 w-full h-full"
-                  loading="lazy">
-                </iframe>
+      container.innerHTML = projects.map((p, i) => `
+        <article class="group ${p.url ? 'col-span-full' : ''}">
+          ${p.url ? `
+            <div class="relative w-full aspect-video mb-3 rounded border border-slate-200 overflow-hidden bg-white">
+              <iframe src="${p.url}" class="absolute inset-0 w-full h-full" loading="lazy"></iframe>
+            </div>
+          ` : p.title === "This Website" && !p.url ? `
+            <p class="text-sm text-slate-500 mb-2">Max recursion depth reached</p>
+          ` : ''}
+          <div class="flex items-start justify-between gap-4">
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <h3 class="text-base font-semibold text-slate-900">${p.title}</h3>
+                ${p.context ? `<span class="text-sm text-slate-500">· ${p.context}</span>` : ''}
               </div>
-            `
-              : project.title === "This Website"
-                ? `<p class="text-red-500 mb-4">Max recursion reached</p>`
-                : `<img src="${project.img}" class="rounded-xl mb-4" alt="${project.title}">`
-            }
-        <h3 class="text-xl font-semibold">${project.title}</h3>
-        <p class="text-gray-600">${project.description}</p>
-        <div class="text-lg mt-auto flex items-center gap-2 flex-wrap">
-            <p class="text-gray-800 font-bold">Tech Stack:</p>
-            ${buildTechList(project.tech)}
-        </div>
-      </div>
-    `,
-        )
-        .join("");
+              <p class="text-base text-slate-600 mb-2">${p.description}</p>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2">${buildTechList(p.tech)}</div>
+                ${p.github ? `<a href="${p.github}" class="text-slate-400 hover:text-slate-900 transition-colors text-lg" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>` : ''}
+              </div>
+            </div>
+          </div>
+          ${i < projects.length - 1 ? '<hr class="mt-6 border-slate-200">' : ''}
+        </article>
+      `).join("");
     }
 
     renderProjects();
-
-    document.querySelectorAll("#projects > div").forEach((el, i) => {
-      el.addEventListener("click", () => onClickProject(projects[i]));
-    });
   </script>
 </body>
 
