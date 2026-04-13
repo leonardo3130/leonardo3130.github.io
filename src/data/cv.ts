@@ -73,8 +73,8 @@ export const experience: Experience[] = [
     logo: "/assets/imgs/applika_logo.svg",
     bullets: [
       {
-        en: "Building and maintaining end-to-end web products in multidisciplinary teams.",
-        it: "Sviluppo e manutenzione di prodotti web end-to-end in team multidisciplinari.",
+        en: "Full-stack developer building data-driven business and industrial applications, with a focus on system integration, process monitoring, and scalable software solutions.",
+        it: "Sviluppatore full-stack di applicazioni industriali e business data-driven, con focus su integrazione di sistemi, monitoraggio di processi e soluzioni software scalabili.",
       },
     ],
   },
