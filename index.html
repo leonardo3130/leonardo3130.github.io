@@ -1,106 +1,18 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Leonardo Po</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-
-<body class="bg-slate-50 text-slate-900 antialiased">
-  <!-- Navbar -->
-  <nav class="fixed top-0 w-full bg-white border-b border-slate-200 z-50">
-    <div class="max-w-4xl mx-auto flex justify-between items-center h-14 px-4 md:px-6">
-      <a href="index.html" class="text-base font-semibold tracking-tight text-slate-900">Leonardo Po</a>
-      <!-- Mobile Menu Button -->
-      <button id="mobileMenuBtn" class="md:hidden p-2 -mr-2 text-slate-600 hover:text-slate-900">
-        <i class="fas fa-bars text-lg"></i>
-      </button>
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex items-center space-x-1">
-        <li>
-          <a href="index.html" class="px-3 py-2 text-base font-medium text-slate-900 bg-slate-100 rounded">About</a>
-        </li>
-        <li>
-          <a href="./pages/projects.html"
-            class="px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">Projects</a>
-        </li>
-        <li>
-          <a href="./pages/cv.html"
-            class="px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded transition-colors">CV</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu"
-      class="max-h-0 overflow-hidden transition-all duration-200 md:hidden bg-white border-t border-slate-200">
-      <ul class="flex flex-col py-2 px-4">
-        <li>
-          <a href="index.html" class="block py-2 text-base font-medium text-slate-900">About</a>
-        </li>
-        <li>
-          <a href="./pages/projects.html"
-            class="block py-2 text-base font-medium text-slate-600 hover:text-slate-900">Projects</a>
-        </li>
-        <li>
-          <a href="./pages/cv.html" class="block py-2 text-base font-medium text-slate-600 hover:text-slate-900">CV</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <main class="max-w-4xl mx-auto px-4 md:px-6 pt-24 pb-16">
-    <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
-      <img src="./assets/imgs/me.jpg" alt="Leonardo Po"
-        class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover flex-shrink-0" />
-      <div class="flex-1">
-        <h1 class="text-3xl font-semibold text-slate-900 mb-3">
-          Leonardo Po
-        </h1>
-        <p class="text-lg text-slate-600 leading-relaxed mb-5">
-          CS MSc student at University of Bologna. BSc in Computer Science. 
-          Interested in software design and development, focused on
-          solving real-world problems through practical, well-crafted software
-          solutions.
-        </p>
-        <div class="flex items-center gap-5">
-          <a href="https://github.com/leonardo3130" class="text-slate-500 hover:text-slate-900 transition-colors"
-            aria-label="GitHub">
-            <i class="fab fa-github text-2xl"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/leonardo-po"
-            class="text-slate-500 hover:text-slate-900 transition-colors" aria-label="LinkedIn">
-            <i class="fab fa-linkedin text-2xl"></i>
-          </a>
-          <a href="mailto:leonardopo313@gmail.com" class="text-slate-500 hover:text-slate-900 transition-colors"
-            aria-label="Email">
-            <i class="fas fa-envelope text-2xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-  <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const currentLevel = Math.abs(
-      parseInt(urlParams.get("iframeLevel")) || 0,
-    );
-    document.querySelectorAll("a[href]").forEach((link) => {
-      link.href = link.href.split("?")[0] + `?iframeLevel=${currentLevel}`;
-    });
-
-    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    mobileMenuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("max-h-0");
-      mobileMenu.classList.toggle("max-h-48");
-      const icon = mobileMenuBtn.querySelector("i");
-      icon.classList.toggle("fa-bars");
-      icon.classList.toggle("fa-times");
-    });
-  </script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leonardo Po</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
